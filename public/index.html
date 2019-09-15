@@ -1,13 +1,17 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+       
+            <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 
-  <link rel="stylesheet" href="css/style.css">
-
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <title>AliciaWalters-home</title>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>AliciaWalters-home</title>
 </head>
 <body>
 <div class="sidenav">
@@ -17,54 +21,47 @@
 </div>
  <div class="main">
 <div class="content">
-    <center>
+    
 
 
-
-<h2 id="margin">Alicia Walters Home Page </h2>
-
-
-
-   <div class="container">
-  <div class="row">
-    <div class="col">
-      <img src="image/ALICIA.png" height="400">
-    </div>
-
-      <div class="col">
-      <h4>About Me</h4>
-
-    <ul class="list2">
-        <li><B>Name:</B> Alicia Walters </li>
-         <LI><b>Country:</b> United States</LI>
-         <li><b>Country of Origin:</b> China</li>
-         <li><b>Birthdate:</b> June 1</li>
-         <li><b>Age:</b> 22 </li>
-         <li><b>Email:</b> <a href=mailto:aliciaw0601@gmail.com? subject="HTML link">aliciaw0601@gmail.com</a></li>
+    <div class="container" id="randomuser">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1>
+          {{ user.results[0].name.first }} {{ user.results[0].name.last }} Home Page
+        </h1>
+        <br>
+           <a target="_blank" v-bind:href="user.results[0].picture.large">
+        <img v-bind:src="user.results[0].picture.large" alt="" width="200px">
+        </a>
+     
+      <br>
+          <br>
+      <center>
+          <div class="container">
+      <ul class="list2">
+          <li><b>Name: </b> {{ user.results[0].name.first }} {{ user.results[0].name.last }} </li>
+          <li><b>Birthday: </b>{{ user.results[0].dob.date }}</li>
+          <li><b>Age: </b>{{ user.results[0].dob.age }}</li>
+          <li><b>Country: </b>{{ user.results[0].location.city }}, {{ user.results[0].location.state }}</li>
+          <li><b>Email: </b><a v-bind:href="'mailto:'+user.results[0].email">{{ user.results[0].email }}</a></li>
           </ul>
+      
+      </div>
+          </center>
     </div>
   </div>
-        </div>
-
-    </center>
-
-
-
-      </div>
+    </div>
+     </div>
     </div>
 
-
-
- <center>
-    <div class="footer">
+     <div class="footer">
 
     Copyright Reserved to Alicia walters
     </div>
-    </center>
-    </body>
-
-
-
-
-
+ 
+    
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src='js/randomuser.app.js'></script>
+</body>
 </html>
