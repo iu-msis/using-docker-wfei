@@ -7,7 +7,7 @@
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-       
+
             <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -21,7 +21,7 @@
 </div>
  <div class="main">
 <div class="content">
-    
+
 
 
     <div class="container" id="randomuser">
@@ -34,7 +34,7 @@
            <a target="_blank" v-bind:href="user.results[0].picture.large">
         <img v-bind:src="user.results[0].picture.large" alt="" width="200px">
         </a>
-     
+
       <br>
           <br>
       <center>
@@ -46,8 +46,14 @@
           <li><b>Country: </b>{{ user.results[0].location.city }}, {{ user.results[0].location.state }}</li>
           <li><b>Email: </b><a v-bind:href="'mailto:'+user.results[0].email">{{ user.results[0].email }}</a></li>
           </ul>
-      
+
       </div>
+
+      <div>
+        <form class="nobox" @submit.prevent="fetchUser">
+           <button class="colorb" type="submit">Switch User</button>
+         </form>
+       </div>
           </center>
     </div>
   </div>
@@ -59,8 +65,8 @@
 
     Copyright Reserved to Alicia walters
     </div>
- 
-    
+
+
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src='js/randomuser.app.js'></script>
 </body>

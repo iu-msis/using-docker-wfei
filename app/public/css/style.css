@@ -147,3 +147,20 @@ th[role=columnheader]:not(.no-sort):hover:after {
 	visibility: visible;
 	opacity: 1;
 }
+
+.nobox{
+  background-color: aliceblue;
+  color: black;
+  padding-top:50PX;
+  padding-bottom: 20PX;
+  text-align: center;
+  border-style: none;
+
+}
+.colorb{
+
+background-color: black;
+color:white;
+padding: 8px;
+
+}
